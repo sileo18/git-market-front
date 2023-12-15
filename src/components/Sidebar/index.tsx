@@ -1,5 +1,6 @@
-import { StyleSheet, SafeAreaView, Image, Dimensions, StatusBar, View, Text } from 'react-native'
 import React from 'react'
+import { StyleSheet, SafeAreaView, Image, Dimensions, StatusBar, View, Text } from 'react-native'
+
 
 import logo from '../../../assets/logo.png'
 import configurationIcon from '../../../assets/ConfigurationIcon.png'
@@ -15,8 +16,7 @@ const height = Dimensions.get('screen').height;
 
 export default function Sidebar() {
     return (
-        <SafeAreaView style={styles.container}>
-            <StatusBar />
+        <SafeAreaView style={styles.container}>            
             <Image style={styles.image} source={logo} />
             <View style={styles.containerItems}>
                 <BackgroundItemEnd Icon={personIcon} />
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         width: 105,
         height: height,
         backgroundColor: '#FFD634',
-        alignSelf: 'flex-start',
+        // alignSelf: 'flex-start',
         paddingVertical: 35
     },
     image: {
