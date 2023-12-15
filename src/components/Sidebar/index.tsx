@@ -1,14 +1,14 @@
 import React from 'react'
-import { StyleSheet, SafeAreaView, Image, Dimensions, StatusBar, View, Text } from 'react-native'
+import { StyleSheet, SafeAreaView, Image, Dimensions, StatusBar, View, Text, TouchableOpacity } from 'react-native'
 
 
 import logo from '../../../assets/logo.png'
 import configurationIcon from '../../../assets/ConfigurationIcon.png'
 import BackgroundItemEnd from './BackgroundsEnd';
 import BackgroundItemCenter from './BackgroundCenter';
-import personIcon from '../../../assets/person.png'
-import peopleIcon from '../../../assets/people.png'
-import plusIcon from '../../../assets/plus.png'
+import Icons from '../Icon';
+
+
 
 const height = Dimensions.get('screen').height;
 
@@ -16,16 +16,16 @@ const height = Dimensions.get('screen').height;
 
 export default function Sidebar() {
     return (
-        <SafeAreaView style={styles.container}>            
+        <SafeAreaView style={styles.container}>
             <Image style={styles.image} source={logo} />
             <View style={styles.containerItems}>
-                <BackgroundItemEnd Icon={personIcon} />
-                <BackgroundItemEnd Icon={peopleIcon} />
-                <BackgroundItemCenter Icon={plusIcon} />
-                
-
+                <BackgroundItemEnd nameIcon={'user-alt'} />
+                <BackgroundItemEnd nameIcon={'user-friends'} />
+                <BackgroundItemCenter nameIcon={'plus'} />
             </View>
-            <Image style={styles.configurationIcon} source={configurationIcon} />
+            <TouchableOpacity activeOpacity={.5}>
+                <Icons name='wrench' />
+            </TouchableOpacity>
         </SafeAreaView>
     )
 }
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
         paddingVertical: 35
     },
     image: {
-        width: 36,
-        height: 35
+        width: 40,
+        height: 38
     },
     configurationIcon: {
         width: 41,

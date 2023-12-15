@@ -1,15 +1,16 @@
 import { View, StyleSheet, Image, ImageSourcePropType, Button, TouchableOpacity } from 'react-native'
 import React from 'react'
+import Icons from '../../Icon'
 
 interface props {
-    Icon: ImageSourcePropType
+    nameIcon: string
 }
 
-export default function BackgroundItemCenter({ Icon }: props) {
+export default function BackgroundItemCenter({ nameIcon }: props) {
     return (
         <View style={styles.backgroundWhite}>
-            <TouchableOpacity >
-                <Image source={Icon} />
+            <TouchableOpacity activeOpacity={.5}>
+            <Icons name={nameIcon}/>
             </TouchableOpacity>
         </View>
     )

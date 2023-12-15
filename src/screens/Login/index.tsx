@@ -27,7 +27,7 @@ export default function Login() {
 
                 <TextInput style={styles.input} placeholder='Password' placeholderTextColor={'#B5B2A2'} />
 
-                <TouchableOpacity style={styles.buttonLogin}>
+                <TouchableOpacity style={styles.buttonLogin} onPress={ () => {navigation.navigate('Home')}}>
                     <Text style={styles.textButton}>Log In</Text>
                 </TouchableOpacity>
             </View>

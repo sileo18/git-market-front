@@ -1,21 +1,15 @@
 import React from 'react';
-import Stack from './src/routes/stack';
-import Sidebar from './src/components/Sidebar';
+import { StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import StackComponent from './src/routes/stack';
 
 export default function App() {
   return (
-    // <SafeAreaView style={styles.container}>
-    //   <Sidebar/>      
-    // </SafeAreaView>
-   <Stack />
+    <NavigationContainer>
+      <StatusBar backgroundColor={'#FFD634'} barStyle="light-content"/>
+      <StackComponent />
+    </NavigationContainer>
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+
