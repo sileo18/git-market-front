@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 type IconProps = PropsWithChildren<{
     name: string;
+    size?: number;
 }>
 
 
@@ -21,6 +22,10 @@ const Icons = ({ name }: IconProps) => {
         case 'wrench':
             return <Icon name="wrench" size={36} color={"#000000"} />
             break;
+        case 'ellipsis-v':
+            return <Icon name="ellipsis-v" size={28} color={"#000000"} />
+            break;
+        
         default:
             break
     }

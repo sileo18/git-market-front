@@ -9,17 +9,14 @@ interface props {
 export default function BackgroundItemEnd({ nameIcon }: props) {
     return (
         <View style={styles.backgroundWhite}>
-            <TouchableOpacity activeOpacity={.5}>
-                <Icons name={nameIcon}/>
-            </TouchableOpacity>
-
+            <Icons name={nameIcon} />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     backgroundWhite: {
-        overflow:  'hidden',
+        overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
@@ -28,7 +25,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         backgroundColor: '#f5f5f5'
     },
-    icon : {
+    icon: {
         marginTop: 20
     }
 })

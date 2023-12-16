@@ -8,10 +8,8 @@ interface props {
 
 export default function BackgroundItemCenter({ nameIcon }: props) {
     return (
-        <View style={styles.backgroundWhite}>
-            <TouchableOpacity activeOpacity={.5}>
-            <Icons name={nameIcon}/>
-            </TouchableOpacity>
+        <View style={styles.backgroundWhite}>            
+            <Icons name={nameIcon}/>           
         </View>
     )
 }

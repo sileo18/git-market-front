@@ -3,10 +3,11 @@ import { StyleSheet, SafeAreaView, Image, Dimensions, StatusBar, View, Text, Tou
 
 
 import logo from '../../../assets/logo.png'
-import configurationIcon from '../../../assets/ConfigurationIcon.png'
 import BackgroundItemEnd from './BackgroundsEnd';
 import BackgroundItemCenter from './BackgroundCenter';
 import Icons from '../Icon';
+import { useNavigation } from '@react-navigation/native';
+import { StackTypes } from '../../routes/stack';
 
 
 
@@ -15,13 +16,22 @@ const height = Dimensions.get('screen').height;
 
 
 export default function Sidebar() {
+
+    const navigation = useNavigation<StackTypes>();
+
     return (
         <SafeAreaView style={styles.container}>
             <Image style={styles.image} source={logo} />
             <View style={styles.containerItems}>
-                <BackgroundItemEnd nameIcon={'user-alt'} />
-                <BackgroundItemEnd nameIcon={'user-friends'} />
-                <BackgroundItemCenter nameIcon={'plus'} />
+                <TouchableOpacity activeOpacity={.5}>
+                    <BackgroundItemEnd nameIcon={'user-alt'} />
+                </TouchableOpacity >
+                <TouchableOpacity activeOpacity={.5} onPress={ () => {navigation.navigate('Friend')}}>
+                    <BackgroundItemEnd nameIcon={'user-friends'} />
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={.5}>
+                    <BackgroundItemCenter nameIcon={'plus'} />
+                </TouchableOpacity>
             </View>
             <TouchableOpacity activeOpacity={.5}>
                 <Icons name='wrench' />
